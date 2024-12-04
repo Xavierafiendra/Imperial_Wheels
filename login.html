@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imperial Wheels - Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+        }
+
+        .login-container {
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #2a5298;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 10px;
+            background: #2a5298;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background: #1e3c72;
+        }
+
+        .login-container p {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .login-container a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Login to Imperial Wheels</h1>
+        <form action="#" method="POST" onsubmit="return validateForm()">
+            <input type="email" placeholder="Email" id="email">
+            <input type="password" placeholder="Password" id="password">
+            <div style="margin-top: 24px; margin-bottom: 24px;">
+                <input type="submit" class="btn" value="Login" class="btn-login">
+            </div>
+        </form>
+        <p>Don't have an account? <a href="#">Sign Up</a></p>
+    </div>
+
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value.trim();
+            var password = document.getElementById("password").value.trim();
+
+            if (!email || !password) {
+                alert("Username dan password belum terisi");
+                return false;
+            }
+
+            if (password === "4321") {
+                alert(`Hore! Berhasil login dengan email: ${email}`);
+                location.href = "index.html";
+                return false;
+            }
+
+            alert("Username atau password salah");
+            return false;
+        }
+    </script>
+</body>
+
+</html>
